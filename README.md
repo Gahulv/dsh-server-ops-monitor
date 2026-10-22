@@ -1,5 +1,7 @@
 # dsh-server-ops-monitor
 
+[GitHub 仓库](https://github.com/Gahulv/dsh-server-ops-monitor)
+
 DSH 的 SSH Ops 配套面板：在同一个右侧栏里查看当前服务器的只读资源指标，以及 Agent 命令的增量输出。
 
 ![设计预览](design-preview/desktop.png)
@@ -15,7 +17,13 @@ DSH 的 SSH Ops 配套面板：在同一个右侧栏里查看当前服务器的�
 
 ## 安装
 
-在 DSH 设置 → 插件 → 添加插件中填写本目录，或：
+从 GitHub：
+
+```sh
+dsh plugin --profile desktop add github:Gahulv/dsh-server-ops-monitor
+```
+
+本地开发时也可以链接当前目录：
 
 ```sh
 dsh plugin --profile desktop add link:C:/github/dsh-server-ops
