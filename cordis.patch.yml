@@ -1,0 +1,3 @@
+- insert:
+    - id: server-ops-monitor
+      name: dsh-server-ops-monitor

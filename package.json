@@ -1,0 +1,45 @@
+{
+  "name": "dsh-server-ops-monitor",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "description": "DSH SSH Ops 配套实时监控与执行观察面板",
+  "keywords": ["dsh", "dsh-plugin", "deepseek-harness", "ssh", "monitoring", "observability"],
+  "repository": {"type": "git", "url": "git+https://github.com/Gahulv/dsh-server-ops-monitor.git"},
+  "homepage": "https://github.com/Gahulv/dsh-server-ops-monitor#readme",
+  "bugs": {"url": "https://github.com/Gahulv/dsh-server-ops-monitor/issues"},
+  "main": "src/index.js",
+  "exports": {
+    ".": "./src/index.js",
+    "./client": "./src/client.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=22.19.0",
+    "dsh": "0.2.1-rc.2"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime"
+      ],
+      "platform": "web"
+    }
+  },
+  "peerDependencies": {
+    "dsh-ssh-ops": "0.4.1"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  }
+}
